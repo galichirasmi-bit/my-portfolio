@@ -1,0 +1,844 @@
+
+/* ==================================
+   1. BASIC SETTINGS
+================================== */
+
+:root {
+    --navy: #14213d;
+    --blue: #315f91;
+    --white: #ffffff;
+    --light: #f3f5f8;
+    --text: #303846;
+    --muted: #667085;
+    --border: #e1e5eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.container {
+    width: 88%;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.section-space {
+    padding: 65px 0;
+}
+
+.soft-section {
+    background: var(--light);
+}
+
+/* ==================================
+   2. ACCESSIBILITY
+================================== */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: var(--white);
+    color: var(--navy);
+    padding: 12px;
+    border: 2px solid var(--navy);
+    z-index: 2000;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #315f91;
+    outline-offset: 4px;
+}
+
+/* ==================================
+   3. HEADER
+================================== */
+
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo-mark {
+    display: none;
+}
+
+.logo-dot {
+    color: var(--blue);
+}
+
+.primary-nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+
+.primary-nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.primary-nav a:hover,
+.primary-nav a[aria-current="page"] {
+    color: var(--blue);
+}
+
+.primary-nav .nav-contact {
+    border: 1px solid var(--navy);
+    padding: 8px 17px;
+    border-radius: 4px;
+}
+
+.primary-nav .nav-contact:hover {
+    background: var(--navy);
+    color: var(--white);
+}
+
+/* ==================================
+   4. MOBILE NAVIGATION
+================================== */
+
+.menu-toggle {
+    display: none;
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--navy);
+    margin: 5px;
+}
+
+/* ==================================
+   5. HOME PAGE
+================================== */
+
+.hero {
+    min-height: 450px;
+    display: block;
+    padding-top: 100px;
+    padding-bottom: 75px;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero-visual {
+    display: none;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    color: var(--navy);
+    font-size: clamp(34px, 5vw, 48px);
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--blue);
+}
+
+.hero-description {
+    color: var(--muted);
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.hero-note {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.status-dot {
+    display: none;
+}
+
+/* ==================================
+   6. BUTTONS
+================================== */
+
+.button {
+    display: inline-block;
+    padding: 11px 21px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--navy);
+    cursor: pointer;
+}
+
+.button-primary {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.button-secondary {
+    background: var(--white);
+    color: var(--navy);
+}
+
+.button-secondary:hover {
+    background: var(--light);
+}
+
+.button-light {
+    background: var(--white);
+    color: var(--navy);
+}
+
+.button-light:hover {
+    background: var(--light);
+}
+
+/* ==================================
+   7. SECTION HEADINGS
+================================== */
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading h2,
+.about-intro h2,
+.contact-info h2 {
+    color: var(--navy);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.section-heading p:last-child {
+    color: var(--muted);
+}
+
+/* ==================================
+   8. INTERESTS
+================================== */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.info-card {
+    padding: 22px 0;
+    border-top: 2px solid var(--navy);
+}
+
+.card-number {
+    display: block;
+    color: var(--blue);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.info-card h3 {
+    color: var(--navy);
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ==================================
+   9. CALL TO ACTION
+================================== */
+
+.cta-section {
+    background: var(--navy);
+    color: var(--white);
+    padding: 45px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.cta-section .eyebrow {
+    color: #c7d7ed;
+}
+
+.cta-section h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.cta-section p {
+    color: #e0e7f0;
+    margin-bottom: 20px;
+}
+
+/* ==================================
+   10. INNER PAGE HEADINGS
+================================== */
+
+.page-banner {
+    padding-top: 65px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--border);
+    margin-top: 25px;
+}
+
+.page-banner h1 {
+    color: var(--navy);
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.page-banner p:last-child {
+    color: var(--muted);
+    max-width: 650px;
+}
+
+/* ==================================
+   11. ABOUT PAGE
+================================== */
+
+.about-intro {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-monogram {
+    width: 115px;
+    height: 115px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 60px;
+}
+
+.about-intro p:not(.eyebrow) {
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+.timeline-card {
+    display: flex;
+    gap: 18px;
+    padding: 25px;
+    background: var(--white);
+    border-left: 3px solid var(--navy);
+}
+
+.timeline-marker {
+    display: none;
+}
+
+.card-label {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.timeline-card h3 {
+    color: var(--navy);
+    margin: 8px 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.skill-card {
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+}
+
+.skill-card h3 {
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    color: var(--muted);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.certification-list {
+    display: grid;
+    gap: 0;
+}
+
+.certification-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.certificate-icon {
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.certification-card h3 {
+    color: var(--navy);
+    font-size: 16px;
+}
+
+.certification-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ==================================
+   12. PROJECTS PAGE
+================================== */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    border: 1px solid var(--border);
+    background: var(--white);
+}
+
+.project-visual {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--light);
+    color: var(--navy);
+    gap: 5px;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-visual span {
+    color: var(--blue);
+    font-size: 13px;
+}
+
+.project-visual strong {
+    font-size: 21px;
+}
+
+.project-visual-two,
+.project-visual-three {
+    background: var(--light);
+    color: var(--navy);
+}
+
+.project-content {
+    padding: 23px;
+}
+
+.project-content h3 {
+    color: var(--navy);
+    font-size: 19px;
+    margin: 9px 0;
+}
+
+.project-content > p:not(.card-label) {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.technology-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.technology-list li {
+    color: var(--blue);
+    background: var(--light);
+    padding: 4px 9px;
+    font-size: 12px;
+}
+
+/* ==================================
+   13. CONTACT PAGE
+================================== */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.contact-info > p:not(.eyebrow) {
+    color: var(--muted);
+    margin: 15px 0 25px;
+}
+
+.contact-detail {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.contact-detail > span {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.contact-detail h3 {
+    color: var(--navy);
+    font-size: 16px;
+}
+
+.contact-detail p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.contact-form-card {
+    padding: 28px;
+    border: 1px solid var(--border);
+}
+
+.contact-form-card h2 {
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.form-intro,
+.form-note {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aab2bf;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--white);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #667085;
+}
+
+.submit-button {
+    width: 100%;
+}
+
+.form-status {
+    margin-top: 15px;
+    color: #176b45;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-note {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+/* ==================================
+   14. FOOTER
+================================== */
+
+.site-footer {
+    background: var(--navy);
+    color: var(--white);
+    padding: 22px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-content p {
+    font-size: 13px;
+}
+
+.footer-content a {
+    color: var(--white);
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+/* ==================================
+   15. RESPONSIVE DESIGN
+================================== */
+
+@media (max-width: 800px) {
+
+    .card-grid,
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .nav-container {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .primary-nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 20px 6%;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .primary-nav.is-open {
+        display: block;
+    }
+
+    .primary-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+    }
+
+    .hero {
+        padding-top: 65px;
+        padding-bottom: 50px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .card-grid,
+    .skills-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .page-banner h1 {
+        font-size: 32px;
+    }
+
+    .contact-form-card {
+        padding: 20px;
+    }
+
+    .cta-section {
+        padding: 30px 22px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+/* ==================================
+   16. REDUCED MOTION
+================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+/* Simple lists */
+
+.simple-list {
+    padding-left: 22px;
+    line-height: 2;
+    color: #444444;
+}
+
+.simple-list li {
+    padding-left: 5px;
+}
+
+.simple-list li::marker {
+    color: #142d4e;
+}
+
+/* Contact form */
+
+.contact-form {
+    max-width: 600px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #142d4e;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font: inherit;
+    color: #222222;
+    background: #ffffff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid #142d4e;
+    outline-offset: 2px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    cursor: pointer;
+}
+
+#formStatus {
+    margin-top: 15px;
+}
