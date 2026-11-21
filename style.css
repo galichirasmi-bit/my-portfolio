@@ -842,3 +842,282 @@ textarea:focus-visible {
 #formStatus {
     margin-top: 15px;
 }
+
+
+/* ==========================================
+   17. ADVANCED CSS3 & DARK MODE
+========================================== */
+
+/* Theme Variables */
+
+:root {
+    color-scheme: light;
+
+    --transition: 0.3s ease;
+}
+
+/* Dark Theme Variables */
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --white: #151b26;
+    --light: #202938;
+    --text: #e5eaf2;
+    --muted: #aab6c8;
+    --border: #344154;
+    --blue: #8ab4f8;
+}
+
+/* Smooth Theme Transitions */
+
+body,
+.site-header,
+.info-card,
+.project-card,
+.contact-form-card,
+input,
+textarea,
+button {
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+/* Dark Theme Heading Colours */
+
+:root[data-theme="dark"] .logo,
+:root[data-theme="dark"] .hero h1,
+:root[data-theme="dark"] .section-heading h2,
+:root[data-theme="dark"] .info-card h3,
+:root[data-theme="dark"] .about-intro h2,
+:root[data-theme="dark"] .contact-info h2,
+:root[data-theme="dark"] .page-banner h1,
+:root[data-theme="dark"] .timeline-card h3,
+:root[data-theme="dark"] .skill-card h3,
+:root[data-theme="dark"] .certification-card h3,
+:root[data-theme="dark"] .project-content h3,
+:root[data-theme="dark"] .contact-detail h3,
+:root[data-theme="dark"] .contact-form-card h2 {
+    color: #e8eef8;
+}
+
+/* Dark Theme Navigation */
+
+:root[data-theme="dark"] .primary-nav a {
+    color: #e5eaf2;
+}
+
+:root[data-theme="dark"] .primary-nav a:hover,
+:root[data-theme="dark"] .primary-nav a[aria-current="page"] {
+    color: #8ab4f8;
+}
+
+/* Dark Theme Mobile Menu */
+
+:root[data-theme="dark"] .menu-toggle {
+    background: #202938;
+    border-color: #344154;
+}
+
+:root[data-theme="dark"] .menu-toggle span {
+    background: #e5eaf2;
+}
+
+@media (max-width: 650px) {
+
+    :root[data-theme="dark"] .primary-nav {
+        background: #151b26;
+        border-color: #344154;
+    }
+
+}
+
+/* Theme Toggle Button */
+
+.theme-toggle {
+    display: inline-grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--light);
+    color: var(--text);
+
+    font-size: 19px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg) scale(1.08);
+}
+
+/* Mobile Menu Positioning */
+
+.nav-container {
+    position: relative;
+}
+
+@media (min-width: 651px) {
+
+    .theme-toggle {
+        margin-left: auto;
+    }
+
+}
+
+/* Better Card Design */
+
+.info-card,
+.project-card,
+.skill-card,
+.contact-form-card {
+    border-radius: 10px;
+}
+
+.info-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--blue);
+    background: var(--white);
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(20, 33, 61, 0.10);
+}
+
+.project-card {
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform var(--transition),
+                box-shadow var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(20, 33, 61, 0.12);
+}
+
+/* Improved Buttons */
+
+.button {
+    border-radius: 7px;
+    transition: all var(--transition);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive Improvements */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: min(90%, 1100px);
+}
+
+@media (max-width: 800px) {
+
+    .hero {
+        padding-top: 75px;
+    }
+
+    .card-grid,
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 38px);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .button {
+        text-align: center;
+    }
+
+    .card-grid,
+    .skills-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        padding: 22px;
+    }
+
+}
+
+/* Dark Theme Form Elements */
+
+:root[data-theme="dark"] .form-group label {
+    color: #e5eaf2;
+}
+
+:root[data-theme="dark"] .form-group input,
+:root[data-theme="dark"] .form-group textarea {
+    color: #e5eaf2;
+    background: #202938;
+    border-color: #536176;
+}
+
+:root[data-theme="dark"] .form-group input::placeholder,
+:root[data-theme="dark"] .form-group textarea::placeholder {
+    color: #aab6c8;
+}
+
+:root[data-theme="dark"] .simple-list {
+    color: #e5eaf2;
+}
+
+/* Reduced Motion Support */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .info-card:hover,
+    .project-card:hover,
+    .button:hover,
+    .theme-toggle:hover {
+        transform: none;
+    }
+
+}
+
+

@@ -29,44 +29,73 @@
         Skip to main content
     </a>
 
-    <!-- Website Header -->
-    <header class="site-header">
+    
+<!-- Website Header -->
+<header class="site-header">
 
-        <div class="container nav-container">
+    <div class="container nav-container">
 
-            <a href="index.html" class="logo">
-                Gali Chirasmi<span class="logo-dot">.</span>
-            </a>
+        <!-- Website Logo -->
+        <a href="index.html" class="logo">
+            Gali Chirasmi<span class="logo-dot">.</span>
+        </a>
 
-            <!-- Navigation Menu -->
-            <nav aria-label="Main navigation"
-                 class="primary-nav">
+        <!-- Dark Mode Button -->
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Switch to dark mode">
+            🌙
+        </button>
 
-                <ul>
-                    <li>
-                        <a href="index.html" aria-current="page">
-                            Home
-                        </a>
-                    </li>
+        <!-- Mobile Menu Button -->
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-menu"
+            aria-label="Open navigation menu">
 
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
+            <span></span>
+            <span></span>
+            <span></span>
 
-                    <li>
-                        <a href="projects.html">Projects</a>
-                    </li>
+        </button>
 
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
+        <!-- Navigation Menu -->
+        <nav
+            aria-label="Main navigation"
+            class="primary-nav"
+            id="primary-menu">
 
-            </nav>
+            <ul>
+                <li>
+                    <a href="index.html" aria-current="page">
+                        Home
+                    </a>
+                </li>
 
-        </div>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
 
-    </header>
+                <li>
+                    <a href="projects.html">Projects</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
 
     <!-- Main Content -->
     <main id="main-content">
